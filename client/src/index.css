@@ -13,45 +13,10 @@
 }
 
 @font-face {
-  font-family: "Poppins Medium";
+  font-family: "Whisper";
   font-style: normal;
   font-weight: normal;
-  src: url("./assets/Fonts/Poppins-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Poppins Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./assets/Fonts/Poppins-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Poppins SemiBold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./assets/Fonts/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "Poppins ExtraBold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./assets/Fonts/Poppins-ExtraBold.ttf");
-}
-
-@font-face {
-  font-family: "Poppins Light";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./assets/Fonts/Poppins-Light.ttf");
-}
-
-@font-face {
-  font-family: "Poppins Thin";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./assets/Fonts/Poppins-Thin.ttf");
+  src: url("./assets/Fonts/WhisperRegular.ttf");
 }
 
 * {
@@ -61,7 +26,7 @@
 body {
   margin: 0;
   overflow-y: overlay;
-  font-family: "Poppins Regular";
+  font-family: "California Dream";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -94,7 +59,7 @@ body ::-webkit-scrollbar-thumb {
   width: 160px;
   cursor: pointer;
   transition: 0.2s;
-  font-family: "Poppins SemiBold";
+  font-family: "California Dream";
 }
 
 .btn:active {
