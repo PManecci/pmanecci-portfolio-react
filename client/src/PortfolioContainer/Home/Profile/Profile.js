@@ -9,16 +9,16 @@ export default function Profile() {
                 <div className='profile-details'>
                     <div className='colz'>
                         <div className='colz-icon'>
-                        <a href='https://www.linkedin.com/in/pmanecci/' target="_blank">
+                        <a href='https://www.linkedin.com/in/pmanecci/' target="_blank" rel="noopener noreferrer">
                             <i className='fa fa-linkedin-square'></i>
                         </a>
-                        <a href='https://github.com/PManecci' target="_blank">
+                        <a href='https://github.com/PManecci' target="_blank" rel="noopener noreferrer">
                             <i className='fa fa-github-square'></i>
                         </a>
-                        <a href='https://www.facebook.com/patty.manecci' target="_blank">
+                        <a href='https://www.facebook.com/patty.manecci' target="_blank" rel="noopener noreferrer">
                             <i className='fa fa-facebook-square'></i>
                         </a>
-                        <a href='https://www.instagram.com/pattymanecci/' target="_blank">
+                        <a href='https://www.instagram.com/pattymanecci/' target="_blank" rel="noopener noreferrer">
                             <i className='fa fa-instagram'></i>
                         </a>
                         </div>                    
