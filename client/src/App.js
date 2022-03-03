@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import Profile from './PortfolioContainer/Home/Profile';
 
 function App() {
