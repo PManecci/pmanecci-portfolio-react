@@ -61,10 +61,9 @@ export default function Header() {
                         <img src={logo} alt="Patty Manecci Logo"/>
                     </div>
                     <div className={
-                        showHeaderOptions
+                        (showHeaderOptions)
                         ? "header-options show-hamburger-options"
-                        : "header-options"
-                        }>
+                        : "header-options"}>
                         {getHeaderOptions()}
                     </div>
                 </div>

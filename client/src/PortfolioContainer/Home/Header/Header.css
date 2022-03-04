@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     height: 140px;
-    color: #FAF5F2;
+    color: var(--cream);
 }
 
 .header-parent {
@@ -11,13 +11,12 @@
     justify-content: space-between;
     height: 100%;
     width: 70%;
-    color: #FAF5F2;
+    color: var(--cream);
 }
 
 .header-logo img {
     display: flex;
-    align-items: left;
-    justify-content: left;
+    justify-content: center;
     height: 140px;
     width: 140px;
 }
@@ -25,12 +24,9 @@
 .header-options {
     display: flex;
     align-items: center;
-}
-
-.header-option {
-    font-size: 16px;
+    justify-content: space-between;
+    font-size: 30px;
     cursor: pointer;
-    font-weight: 600;
 }
 
 .header-hamburger {
