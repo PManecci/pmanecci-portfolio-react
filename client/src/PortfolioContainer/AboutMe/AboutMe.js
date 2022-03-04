@@ -13,7 +13,7 @@ export default function AboutMe(props) {
         const fadeInSubscription = ScrollService.currentScreenFadeiIn.subscribe(fadeInScreenHandler)
     
         const SCREEN_CONSTANTS = {
-            description: "Software Engineer specializing in FrontEnd Design & Development.",
+            description: "I am a Software Engineer specializing in FrontEnd Design & Development. I love a good puzzle and I thrive in environments that require problem solving, long-term learning and good old-fashioned trial-and-error. Looking forward to putting those skils to work for you!",
             highlights: {
                 bullets: [
                     "UI/UX Design",
@@ -42,17 +42,16 @@ export default function AboutMe(props) {
         <div className='about-me-container screen-container' id={props.id || ""}>
             <div className='about-me-parent'>
                 <ScreenHeading title={'About Me'} subHeading={'Why Should You Choose Me?'} />
-            </div>
-            <div className='about-me-card'>
-                <div className='about-me-profile'></div>
-                <div className='about-me-details'>
-                    <span className='about-me-description'>{SCREEN_CONSTANTS.description}</span>
-                    <div className='about-me-highlights'>
-                        <div className='highlights-heading'>
-                            <span>{SCREEN_CONSTANTS.highlights.heading}</span>
+                <div className='about-me-card'>
+                    <div className='about-me-profile'></div>
+                    <div className='about-me-details'>
+                        <span className='about-me-description'>{SCREEN_CONSTANTS.description}</span>
+                        <div className='about-me-highlights'>
+                            <div className='highlights-heading'>
+                                <span>{SCREEN_CONSTANTS.highlights.heading}</span>
+                            </div>
+                            {renderHighlight()}
                         </div>
-                        {renderHighlight()}
-                    </div>
                     <div className='about-me-options'>
                         <button className='btn primary-btn'>
                             {""}
@@ -61,6 +60,7 @@ export default function AboutMe(props) {
                         <a href="resume.pdf" download="PattyManecci resume.pdf">
                             <button className='btn highlighted-btn'>Get Resume</button>
                         </a>
+                        </div>
                     </div>
                 </div>
             </div>
