@@ -7,7 +7,7 @@ import './Header.css';
 import logo from '../../../assets/Home/logo.png';
 
 export default function Header() {
-    const [selectedScreen, setselectedScreen] = useState(0)
+    const [selectedScreen, setSelectedScreen] = useState(0)
     const [showHeaderOptions, setShowHeaderOptions] = useState(false)
 
     const updateCurrentScreen = (currentScreen) => {
@@ -15,10 +15,11 @@ export default function Header() {
         return;
         let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView)
         if(screenIndex < 0)
-        return
+        return;
     }
+
     let currentScreenSubscription = ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen)
-    
+
     const getHeaderOptions = () => {
         return(
             TOTAL_SCREENS.map((screen, i) =>(
@@ -31,12 +32,13 @@ export default function Header() {
     }
 
     const getHeaderOptionsClass = (index) => {
-        let classes = "header-option";
-        if(index < TOTAL_SCREENS.length -1)
-        classes += "header-option-seperator";
+        let classes = "header-option"
 
-        if (selectedScreen === index)
-        classes += "selected-header-option";
+        if(index < TOTAL_SCREENS.length -1)
+        classes += " header-option-seperator ";
+
+        if(selectedScreen === index)
+        classes += " selected-header-option ";
         return
     }
 
@@ -46,7 +48,7 @@ export default function Header() {
         return
 
         screenComponent.scrollIntoView({behavior: 'smooth'})
-        setselectedScreen(index)
+        setSelectedScreen(index);
         setShowHeaderOptions(false);
     };
 
@@ -60,10 +62,10 @@ export default function Header() {
                     <div className='header-logo'>
                         <img src={logo} alt="Patty Manecci Logo"/>
                     </div>
-                    <div className={
-                        (showHeaderOptions)
-                        ? "header-options show-hamburger-options"
-                        : "header-options"}>
+                    <div className={(showHeaderOptions)
+                        ? " header-options header-hamburger-options "
+                        : " header-options "
+                        }>
                         {getHeaderOptions()}
                     </div>
                 </div>

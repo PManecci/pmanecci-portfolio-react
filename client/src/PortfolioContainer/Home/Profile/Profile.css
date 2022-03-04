@@ -51,6 +51,7 @@
     margin: 0 0 0 28px;
     background-color: cornsilk;
     color: #4B5765;
+    border: solid 3px var(--blue);
 }
 
 .profile-picture {

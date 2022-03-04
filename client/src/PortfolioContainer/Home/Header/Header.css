@@ -16,13 +16,12 @@
 
 .header-logo img {
     display: flex;
-    justify-content: center;
     height: 140px;
     width: 140px;
 }
 
 .header-options {
-    display: flex;
+    display: contents;
     align-items: center;
     justify-content: space-between;
     font-size: 30px;
@@ -32,6 +31,11 @@
 .header-hamburger {
     display: none;
     color: var(--cream);
+}
+
+.header-option {
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .header-option-seperator {

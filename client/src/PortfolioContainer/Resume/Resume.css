@@ -1,0 +1,8 @@
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 0 0;
+    background-color: var(--cream);
+}
