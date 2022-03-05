@@ -1,16 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
-import ScrollService from '../../utilities/ScrollService';
-import Animations from '../../utilities/Animations';
 import './AboutMe.css';
 
 export default function AboutMe(props) {
-        let fadeInScreenHandler = (screen) => {
-            if(screen.fadeScreen !== props.id)
-            return
-            Animations.animations.fadeInScreen(props.id)
-        }
-        const fadeInSubscription = ScrollService.currentScreenFadeiIn.subscribe(fadeInScreenHandler)
     
         const SCREEN_CONSTANTS = {
             description: "I am a Software Engineer specializing in FrontEnd Design & Development. I love a good puzzle and I thrive in environments that require problem solving, long-term learning and good old-fashioned trial-and-error. Looking forward to putting those skils to work for you!",

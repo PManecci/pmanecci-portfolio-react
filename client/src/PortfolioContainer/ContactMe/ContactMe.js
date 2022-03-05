@@ -5,18 +5,9 @@ import {toast} from 'react-toastify';
 
 import imgBack from '../../assets/ContactMe/contact.png';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
-import ScrollService from '../../utilities/ScrollService';
-import Animations from '../../utilities/Animations';
 import './ContactMe.css';
 
 export default function ContactMe(props) {
-
-    let fadeInScreenHandler = (screen) => {
-        if(screen.fadeScreen !== props.id)
-        return
-        Animations.animations.fadeInScreen(props.id)
-    }
-    const fadeInSubscription = ScrollService.currentScreenFadeiIn.subscribe(fadeInScreenHandler)
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -93,7 +84,7 @@ export default function ContactMe(props) {
                 <div className='back-form'>
                     <div className='img-back'>
                         <h4>Send Your Email Here!</h4>
-                        <img src={imgBack} alt='image not found'/>
+                        <img src={imgBack} alt='laptop and coffee'/>
                     </div>
                     <form onSubmit={submitForm}>
                         <p>{banner}</p>
