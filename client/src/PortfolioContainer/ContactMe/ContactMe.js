@@ -61,9 +61,9 @@ export default function ContactMe(props) {
                     loop={Infinity}
                     steps={[
                         "Send Me An Email &",
-                        1000,
+                        2000,
                         "Let's Get To Work!",
-                        1000,
+                        2000,
                     ]}
                     />
                     </h1>
