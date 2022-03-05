@@ -111,6 +111,9 @@
 }
 
 .heading-bullet {
+    position: absolute;
+    left: -30px;
+    top: 5px;
     background-color: var(--gold);
     height: 15px;
     width: 15px;
