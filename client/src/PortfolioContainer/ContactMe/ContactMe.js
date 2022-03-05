@@ -37,11 +37,15 @@ export default function ContactMe(props) {
                 };
                 const res = await axios.post(`/contact`, data);
                 if(name.length === 0 || email.length === 0 || message.length === 0 ) {
-                    setBanner(res.data.msg)
-                    toast.error(res.data.msg)
+                    setBanner(res.data.msg);
+                    toast.error(res.data.msg);
                 } else if (res.status === 200) {
-                    setBanner(res.data.msg)
-                    toast.success(res.data.msg)
+                    setBanner(res.data.msg);
+                    toast.success(res.data.msg);
+
+                    setName("");
+                    setEmail("");
+                    setMessage("");
                 }
             } catch (e) {
             } console.log(e);
