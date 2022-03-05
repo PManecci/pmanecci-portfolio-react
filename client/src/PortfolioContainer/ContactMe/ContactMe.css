@@ -1,0 +1,152 @@
+.main-container {
+    min-height: 100vh;
+    background-color: var(--cream);
+}
+
+.central-form {
+    max-width: 1110px;
+    padding: 10px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--green);
+}
+
+h1 {
+    font-family: "Blossom";
+    font-size: 60px;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.back-form {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.back-form .img-back {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.img-back h4 {
+    color: var(--cream);
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.back-form .img-back img {
+    width: 100%;
+}
+
+.central-form form {
+    width: auto;
+    display: flex;
+    color: var(--blue);
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    background-color: var(--cream);
+    border-radius: 12px;
+}
+
+form p {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--gold);
+    letter-spacing: 0.4rem;
+}
+
+form label { 
+    margin-bottom: 5px;
+    color: var(--blue);
+    letter-spacing: 0.2rem;
+}
+
+form input, textarea {
+    width: 100%;
+    border: 1px solid var(--blue);
+    outline: none;
+    background-color: whitesmoke;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border: 2px solid var(--gold);
+    background-color: white;
+}
+
+textarea:focus {
+    border: 2px solid var(--gold);
+    background-color: white;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 5px;
+    outline: none;
+    width: 160px;
+    border: 2px solid var(--cream);
+    font-size: 16px;
+    border-radius: 19px;
+    background-color: var(--blue);
+    color: var(--cream);
+    align-items: center;
+    justify-content: center;
+}
+
+form button:hover {
+    background-color: var(--gold);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    transition: all ease 0.5s;
+}
+
+.img-back {
+    flex: 1;
+    align-self: center;
+    margin-right: 20px;
+}
+
+form {
+    flex: 0.9;
+}
+
+.col i {
+    padding: 15px;
+    color: var(--cream);
+    height: 15px;
+    width: 15px;
+}
+
+.col i:hover {
+    transform: scale(1.5);
+}
+
+@media screen and (min-width: 940px){
+    .back-form {
+        max-width: 1110px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .img-back {
+        flex: 1;
+        align-self: center;
+        margin-right: 20px;
+    }
+    form {
+        flex: 0.9;
+    }
+}

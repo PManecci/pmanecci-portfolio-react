@@ -27,14 +27,15 @@
 .profile-details-role h1 {
     font-size: 80px;
     font-family: "Blossom";
+    color: var(--cream);
 }
 
 .primary-text {
-    color: (--white);
+    color: var(--cream);
 }
 
 .highlighted-text {
-    color: (--dark-orange);
+    color: var(--gold);
 }
 
 .profile-role-tagline {
