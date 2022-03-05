@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import Typical from 'react-typical';
+import axios from 'axios';
+import {toast} from 'react-toastify';
+
 import imgBack from '../../assets/ContactMe/contact.png';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
@@ -19,7 +22,6 @@ export default function ContactMe(props) {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [banner, setBanner] = useState("")
-    const [bool, setBool] = useState(false)
     
     const handleName = (e) => {
         setName(e.target.value);
@@ -32,6 +34,28 @@ export default function ContactMe(props) {
     const handleMessage = (e) => {
         setMessage(e.target.value);
     };
+
+    console.log(name);
+        const submitForm = async(e) => {
+            e.preventDefault();
+            try {
+                let data = {
+                    name,
+                    email,
+                    message
+                };
+                const res = await axios.post(`/contact`, data);
+                if(name.length === 0 || email.length === 0 || message.length === 0 ) {
+                    setBanner(res.data.msg)
+                    toast.error(res.data.msg)
+                } else if (res.status === 200) {
+                    setBanner(res.data.msg)
+                    toast.success(res.data.msg)
+                }
+            } catch (e) {
+            } console.log(e);
+            debugger;
+        };
 
     return (
         <div className='main-container' id={props.id || ""}>
@@ -71,7 +95,7 @@ export default function ContactMe(props) {
                         <h4>Send Your Email Here!</h4>
                         <img src={imgBack} alt='image not found'/>
                     </div>
-                    <form>
+                    <form onSubmit={submitForm}>
                         <p>{banner}</p>
                         <label htmlFor='name'>Name</label>
                         <input type='text' onChange={handleName} value={name} />
