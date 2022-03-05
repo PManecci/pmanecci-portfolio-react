@@ -1,5 +1,6 @@
 import React from 'react';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
+import ScrollService from '../../utilities/ScrollService';
 import './AboutMe.css';
 
 export default function AboutMe(props) {
@@ -45,7 +46,7 @@ export default function AboutMe(props) {
                             {renderHighlight()}
                         </div>
                     <div className='about-me-options'>
-                        <button className='btn primary-btn'>
+                        <button className='btn primary-btn' onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
                             {""}
                             Hire Me{" "}
                         </button>
