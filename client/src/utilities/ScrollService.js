@@ -38,17 +38,15 @@ export default class ScrollService {
             case "complete": 
             return completelyVisible
             default:
-                return false
+                return false;
         }
-    }
+    };
 
     checkCurrentScreenUnderViewport = (event) => {
-        if(!event || Object.keys(event).length <1)
-        return;
+        if(!event || Object.keys(event).length <1) return;
         for(let screen of TOTAL_SCREENS){
             let screenFromDOM = document.getElementById(screen.screen_name);
-            if(!screenFromDOM)
-            continue;
+            if(!screenFromDOM) continue;
 
             let fullyVisisble = this.isElementInView(screenFromDOM, "complete");
             let partiallyVisible = this.isElementInView(screenFromDOM, "partial");

@@ -173,6 +173,18 @@
     color: var(--blue);
 }
 
+.resume-description-text a {
+    color: var(--green);
+}
+
+.project-container a {
+    color: var(--green);
+}
+
+.project-github-link a {
+    color: var(--green);
+}
+
 @media only screen and (max-width: 1110px) {
     .resume-card{
         width: 880px;
@@ -183,7 +195,7 @@
 }
 
 @media only screen and (max-width: 1023px) {
-    .resume-content {
+    .resume-content{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -192,9 +204,9 @@
         width: 90%;
     }
     .resume-card {
-        height: fit-content;
         display: flex;
         flex-direction: column;
+        height: fit-content;
         margin: 30px 0;
         align-items: center;
         width: 90%;

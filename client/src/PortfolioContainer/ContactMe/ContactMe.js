@@ -1,13 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Typical from 'react-typical';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 
 import imgBack from '../../assets/ContactMe/contact.png';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
+import ScrollService from '../../utilities/ScrollService';
+import Animations from '../../utilities/Animations';
 import './ContactMe.css';
 
 export default function ContactMe(props) {
+
+    let fadeInScreenHandler = (screen) => {
+        if (screen.fadeInScreen !== props.id) return;
+        Animations.animations.fadeInScreen(props.id);
+    };
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -49,8 +57,12 @@ export default function ContactMe(props) {
                 }
             } catch (e) {
             } console.log(e);
-            debugger;
         };
+    
+    useEffect(() => {
+        return () => { fadeInSubscription.unsubscribe();
+        };
+    }, [fadeInSubscription]);
 
     return (
         <div className='main-container' id={props.id || ""}>
@@ -72,6 +84,7 @@ export default function ContactMe(props) {
                     />
                     </h1>
                     </span>
+                    <span className='icons'>
                     <a href='https://www.linkedin.com/in/pmanecci/' target="_blank" rel="noopener noreferrer">
                         <i className='fa fa-linkedin-square'></i>
                     </a>
@@ -84,10 +97,11 @@ export default function ContactMe(props) {
                     <a href='https://www.instagram.com/pattymanecci/' target="_blank" rel="noopener noreferrer">
                         <i className='fa fa-instagram'></i>
                     </a>
+                    </span>
                 </div>
                 <div className='back-form'>
                     <div className='img-back'>
-                        <h4>Send Your Email Here!</h4>
+                        <h4>Please Use This Form <br/> To Send Me An Email: </h4>
                         <img src={imgBack} alt='laptop and coffee'/>
                     </div>
                     <form onSubmit={submitForm}>

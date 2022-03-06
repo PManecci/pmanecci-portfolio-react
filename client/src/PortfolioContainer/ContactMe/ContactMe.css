@@ -34,6 +34,7 @@ h1 {
 .img-back h4 {
     color: var(--cream);
     letter-spacing: 0.2rem;
+    text-align: center;
     font-weight: 400;
     font-size: 18px;
     padding-left: 20px;
@@ -122,8 +123,14 @@ form {
     flex: 0.9;
 }
 
+.icons {
+    justify-content: center;
+    align-items: center;
+    margin-left: 140px;
+}
+
 .col i {
-    padding: 15px;
+    padding: 20px;
     color: var(--cream);
     height: 15px;
     width: 15px;

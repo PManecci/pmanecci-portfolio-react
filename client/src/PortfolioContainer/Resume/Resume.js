@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
+import ScrollService from '../../utilities/ScrollService';
+import Animations from '../../utilities/Animations';
 import './Resume.css'
 
-export default function Resume(props) {
+const Resume = (props) => {
     const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
     const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
+
+    let fadeInScreenHandler = (screen) => {
+        if (screen.fadeInScreen !== props.id) return;
+        Animations.animations.fadeInScreen(props.id);
+    };
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const ResumeHeading = (props) => {
         return (
@@ -14,7 +22,7 @@ export default function Resume(props) {
                 <span>{props.heading ? props.heading : ''}</span>
                 {props.fromDate && props.toDate ? (
                     <div className='heading-date'>
-                        {props.fromDate + "_" + props.toDate}
+                        {props.fromDate + "-" + props.toDate}
                     </div>
                 ) : (
                     <div></div>
@@ -52,20 +60,20 @@ export default function Resume(props) {
         { 
             title: "React Personal Portfolio", 
             duration: {fromDate: "2021", toDate: "2022"}, 
-            subHeading: "Link to Github Repo: ",
-            description: "My first React JS project updating my personal portfolio"
+            subHeading: <a href='https://www.PattyManecci.com'>www.PattyManecci.com</a>,
+            description: "My first React JS project updating my personal portfolio!"
         },
         { 
-            title: "React Personal Portfolio", 
-            duration: {fromDate: "2021", toDate: "2022"}, 
-            subHeading: "Link to Github Repo: ",
-            description: "My first React JS project updating my personal portfolio"
+            title: "Get Social API", 
+            duration: {fromDate: "2022", toDate: "2022"}, 
+            subHeading: <a href='https://github.com/PManecci/get-social-18'>Get Social API</a>,
+            description: "A Mongo DB based API for a simple sovial networking platform, first major Database & Routes project!"
         },
         { 
-            title: "React Personal Portfolio", 
-            duration: {fromDate: "2021", toDate: "2022"}, 
-            subHeading: "Link to Github Repo: ",
-            description: "My first React JS project updating my personal portfolio"
+            title: "Will It Rain?", 
+            duration: {fromDate: "2021", toDate: "2021"}, 
+            subHeading: <a href='https://pmanecci.github.io/will-it-rain-6'>Will It Rain</a>,
+            description: "My first JavaScript & API project - A Weather Dashboard utilizing OpenWeather"
         }
     ];
 
@@ -100,12 +108,17 @@ export default function Resume(props) {
             />
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                    FLVS Details Here! 
+                -Responsible for providing direct and meaningful communication, <br/>feedback, instruction and technical support for a an average of 80-155 <br/>6th Grade Math students and their families.
                 </span>
             </div>
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                    -Link to Linked In?! 
+                -Utilizing HTML/CSS to enhance plain-text grading feedback and communication - embedding images, videos and links to maximize engagement and improve user experience.
+                </span>
+            </div>
+            <div className='experience-description'>
+                <span className='resume-description-text'>
+                For my full work history please vist my <a href="https://www.linkedin.com/in/pmanecci/">Linked In</a> Profile!
                 </span>
             </div>
         </div>,
@@ -124,7 +137,7 @@ export default function Resume(props) {
             ))}
         </div>,
 
-        <div className='resume-screen-container' key="projects">
+        <div className='resume-screen-container project-container' key="projects">
             {projectDetails.map((projectDetails, index) => (
                 <ResumeHeading 
                     key={index}
@@ -135,20 +148,25 @@ export default function Resume(props) {
                     toDate={projectDetails.duration.toDate}
                 />
             ))}
+            <div className='project-description'>
+                <span className='project-github-link'>
+                    To see all of my projects and repos visit my <a href="https://github.com/PManecci">Github</a> Profile!
+                </span>
+            </div>
         </div>,
 
         <div className='resume-screen-container' key="interests">
             <ResumeHeading 
                 heading='Traveling'
-                description='Why I love it - favorite places'
+                description='I grew up in a miltary family so moving and experiencing new places were common place activites. I love immersing myself in new cultures, eating new foods and generally experiencing the world. My favorite place I have been so far is Florence, Italy!'
             />
             <ResumeHeading 
                 heading='Cooking and Baking'
-                description='Love a good meal'
+                description='I enjoy the process of cooking and tyring to recreate those dishes we loved while traveling in my own kitchen. My favorite part is being able to bring back and truly share a little part of that travel experience with our family and friends!'
             />
             <ResumeHeading 
                 heading='Table Top Games'
-                description='Pandemic Dungeons and Dragons!'
+                description='I recently started playing D&amp;D and quickly became addicted. It combines the imaginative version of being able to travel with hanging out with friends (and always involves food) with allowing me to get creative with storytelling and character creation. A great at home option for a quick getaway from reality!'
             />
         </div>,
     ];
@@ -175,8 +193,8 @@ export default function Resume(props) {
                 />
                 <span className='bullet-label'>{bullet.label}</span>
             </div>
-        ))
-    }
+        ));
+    };
 
     const getResumeScreen = () => {
         return(
@@ -189,6 +207,11 @@ export default function Resume(props) {
         )
     };
 
+    useEffect(() => {
+        return () => { fadeInSubscription.unsubscribe();
+        };
+    }, [fadeInSubscription]);
+
     return (
         <div className='resume-container screen-container' id={props.id || ""}>
             <div className='resume-content'>
@@ -196,9 +219,8 @@ export default function Resume(props) {
                 <div className='resume-card'>
                     <div className='resume-bullets'>
                         <div className='bullet-container'>
-                            <div className='bullet-icons'>
-                                <div className='bullets'>{getBullets()}</div>
-                            </div>
+                            <div className='bullet-icons'></div>
+                            <div className='bullets'>{getBullets()}</div>
                         </div>
                     </div>
                     <div className='resume-bullet-details'>
@@ -211,3 +233,4 @@ export default function Resume(props) {
     )
 }
 
+export default Resume;
