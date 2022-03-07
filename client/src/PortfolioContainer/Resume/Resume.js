@@ -108,12 +108,12 @@ const Resume = (props) => {
             />
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                -Responsible for providing direct and meaningful communication, <br/>feedback, instruction and technical support for a an average of 80-155 <br/>6th Grade Math students and their families.
+                -Provide direct and meaningful communication, feedback, instruction and technical support for a an average of 80-155 6th Grade Math students.
                 </span>
             </div>
             <div className='experience-description'>
                 <span className='resume-description-text'>
-                -Utilizing HTML/CSS to enhance plain-text grading feedback and communication - embedding images, videos and links to maximize engagement and improve user experience.
+                -Utilize HTML/CSS to enhance grading feedback and communication - embedding images, videos and links to maximize engagement and improve user experience.
                 </span>
             </div>
             <div className='experience-description'>
@@ -150,7 +150,7 @@ const Resume = (props) => {
             ))}
             <div className='project-description'>
                 <span className='project-github-link'>
-                    To see all of my projects and repos visit my <a href="https://github.com/PManecci">Github</a> Profile!
+                    To see all of my projects visit my <a href="https://github.com/PManecci">Github</a> Profile!
                 </span>
             </div>
         </div>,
@@ -158,15 +158,15 @@ const Resume = (props) => {
         <div className='resume-screen-container' key="interests">
             <ResumeHeading 
                 heading='Traveling'
-                description='I grew up in a miltary family so moving and experiencing new places were common place activites. I love immersing myself in new cultures, eating new foods and generally experiencing the world. My favorite place I have been so far is Florence, Italy!'
+                description='I grew up in a miltary family so moving and experiencing new places was the norm. I love immersing myself in new cultures and eating new foods. My favorite place I have been so far is Florence, Italy!'
             />
             <ResumeHeading 
                 heading='Cooking and Baking'
-                description='I enjoy the process of cooking and tyring to recreate those dishes we loved while traveling in my own kitchen. My favorite part is being able to bring back and truly share a little part of that travel experience with our family and friends!'
+                description='I enjoy cooking and trying to recreate those dishes we loved while traveling in my own kitchen. My favorite part is being able to bring back and share a little part of that travel experience with our family and friends!'
             />
             <ResumeHeading 
                 heading='Table Top Games'
-                description='I recently started playing D&amp;D and quickly became addicted. It combines the imaginative version of being able to travel with hanging out with friends (and always involves food) with allowing me to get creative with storytelling and character creation. A great at home option for a quick getaway from reality!'
+                description='I recently started playing D&amp;D and love that it combines a version of travel with hanging out with friends. A great at home option for a quick getaway from reality!'
             />
         </div>,
     ];

@@ -13,7 +13,7 @@ export default function AboutMe(props) {
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     
     const SCREEN_CONSTANTS = {
-        description: "I am a Software Engineer specializing in FrontEnd Design & Development. I love a good puzzle and I thrive in environments that require problem solving, long-term learning and good old-fashioned trial-and-error. Looking forward to putting those skils to work for you!",
+        description: "I am a Software Engineer specializing in FrontEnd Design & Development. I love a good puzzle and I thrive in environments that require problem solving, long-term learning and good old-fashioned trial-and-error. Looking forward to putting those skills to work for you!",
         highlights: {
             bullets: [
                 "UI/UX Design",

@@ -84,7 +84,7 @@ export default function ContactMe(props) {
                     />
                     </h1>
                     </span>
-                    <span className='icons'>
+                    <div className='icons'>
                     <a href='https://www.linkedin.com/in/pmanecci/' target="_blank" rel="noopener noreferrer">
                         <i className='fa fa-linkedin-square'></i>
                     </a>
@@ -97,7 +97,7 @@ export default function ContactMe(props) {
                     <a href='https://www.instagram.com/pattymanecci/' target="_blank" rel="noopener noreferrer">
                         <i className='fa fa-instagram'></i>
                     </a>
-                    </span>
+                    </div>
                 </div>
                 <div className='back-form'>
                     <div className='img-back'>

@@ -208,13 +208,15 @@
         flex-direction: column;
         height: fit-content;
         margin: 30px 0;
+        padding: 30px 0;
         align-items: center;
         width: 90%;
     }
     .resume-bullet-details {
         height: 360px;
         width: fit-content;
-        padding: 0;
+        padding: 20px 0;
+        margin: 20px 0;
     }
     .resume-bullets {
         width: 100%;
@@ -222,5 +224,14 @@
     }
     .selected-bullet {
         width: 100%;
+    }
+    .resume-description-text {
+        font-size: 12px;
+    }
+    .project-github-link {
+        font-size: 12px;
+    }
+    .resume-heading-description{
+        font-size: 12px;
     }
 }

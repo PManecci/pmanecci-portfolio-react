@@ -124,9 +124,8 @@ form {
 }
 
 .icons {
-    justify-content: center;
-    align-items: center;
-    margin-left: 140px;
+    width: 50%;
+    text-align: center;
 }
 
 .col i {
@@ -134,6 +133,7 @@ form {
     color: var(--cream);
     height: 15px;
     width: 15px;
+    text-align: center;
 }
 
 .col i:hover {
@@ -155,5 +155,11 @@ form {
     }
     form {
         flex: 0.9;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .icons {
+        width: 100%;
     }
 }
